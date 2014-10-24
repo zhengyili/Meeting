@@ -1,0 +1,8 @@
+GtkFrame.default {
+	padding: 5px;
+}
+
+GtkTextView.default {
+	border-radius: 10px;
+	background-color: #00CCCC;
+}

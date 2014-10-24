@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.1 -->
+<!-- Generated with glade 3.18.3 -->
 <interface domain="">
   <requires lib="gtk+" version="3.10"/>
+  <!-- interface-css-provider-path main.css -->
   <object class="GtkTextBuffer" id="textbuffer1">
     <property name="text" translatable="yes">Dreamsxin: 歡迎加入GTK興趣小組</property>
   </object>
@@ -60,6 +61,7 @@
               <object class="GtkToolbar" id="toolbar2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="show_arrow">False</property>
                 <child>
                   <object class="GtkToolButton" id="toolbutton4">
                     <property name="visible">True</property>
@@ -124,6 +126,19 @@ audio-volume-medium</property>
                   <packing>
                     <property name="expand">False</property>
                     <property name="homogeneous">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="toolbutton10">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">toolbutton10</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-media-record</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
                   </packing>
                 </child>
               </object>
@@ -816,7 +831,7 @@ audio-volume-medium</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="button1">
+                  <object class="GtkButton" id="sendbutton">
                     <property name="label" translatable="yes">發送</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -866,6 +881,9 @@ audio-volume-medium</property>
                         <property name="wrap_mode">word</property>
                         <property name="buffer">textbuffer2</property>
                         <property name="accepts_tab">False</property>
+                        <style>
+                          <class name="default"/>
+                        </style>
                       </object>
                     </child>
                   </object>
@@ -877,6 +895,9 @@ audio-volume-medium</property>
                     <property name="label" translatable="yes">公告</property>
                   </object>
                 </child>
+                <style>
+                  <class name="default"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -958,7 +979,7 @@ audio-volume-medium</property>
                 </child>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
               </packing>
