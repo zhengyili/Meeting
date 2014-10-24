@@ -11,3 +11,8 @@ sudo apt-get install libgtkmm-3.0-dev
 #Ubuntu
 sudo apt-get install libwebkitgtk-3.0-dev
 ```
+
+Debug
+```shell
+ulimit -c unlimited
+```

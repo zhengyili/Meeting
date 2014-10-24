@@ -53,7 +53,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=`pkg-config --libs gtkmm-3.0`  
+LDLIBSOPTIONS=`pkg-config --libs gtkmm-3.0` `pkg-config --libs webkitgtk-3.0`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -66,12 +66,12 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/meeting: ${OBJECTFILES}
 ${OBJECTDIR}/src/LoginDialog.o: src/LoginDialog.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I/usr/include/glib-2.0 -I/usr/include/glibmm-2.4 -I/usr/include/gdkmm-3.0 -I/usr/include/gtkmm-3.0 `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/LoginDialog.o src/LoginDialog.cpp
+	$(COMPILE.cc) -g -Isrc -I/usr/include/glib-2.0 -I/usr/include/glibmm-2.4 -I/usr/include/gdkmm-3.0 -I/usr/include/gtkmm-3.0 -I/usr/include/webkitgtk-3.0 `pkg-config --cflags gtkmm-3.0` `pkg-config --cflags webkitgtk-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/LoginDialog.o src/LoginDialog.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I/usr/include/glib-2.0 -I/usr/include/glibmm-2.4 -I/usr/include/gdkmm-3.0 -I/usr/include/gtkmm-3.0 `pkg-config --cflags gtkmm-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -Isrc -I/usr/include/glib-2.0 -I/usr/include/glibmm-2.4 -I/usr/include/gdkmm-3.0 -I/usr/include/gtkmm-3.0 -I/usr/include/webkitgtk-3.0 `pkg-config --cflags gtkmm-3.0` `pkg-config --cflags webkitgtk-3.0`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:

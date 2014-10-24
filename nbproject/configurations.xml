@@ -47,12 +47,14 @@
             <pElem>/usr/include/glibmm-2.4</pElem>
             <pElem>/usr/include/gdkmm-3.0</pElem>
             <pElem>/usr/include/gtkmm-3.0</pElem>
+            <pElem>/usr/include/webkitgtk-3.0</pElem>
           </incDir>
           <commandLine>-std=c++11 -O0 -g3 -Wall</commandLine>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs gtkmm-3.0`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs webkitgtk-3.0`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

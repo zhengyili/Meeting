@@ -7,6 +7,7 @@
 
 #include <cstdlib>
 #include <gtkmm.h>
+#include <webkit/webkit.h>
 
 #include "LoginDialog.h"
 
@@ -23,6 +24,8 @@ int main(int argc, char** argv) {
 
 	LoginDialog* loginDialog = NULL;
 	Gtk::ApplicationWindow* mainWindow = NULL;
+	Gtk::ScrolledWindow* webScrolledWindow = NULL;
+	WebKitWebView *webView = NULL;
 
 	builder->get_widget_derived("logindialog", loginDialog);
 
@@ -39,12 +42,21 @@ int main(int argc, char** argv) {
 
 			builder->get_widget("mainwindow", mainWindow);
 			
-			app->run(*mainWindow);
+			if (mainWindow) {
+				builder->get_widget("webscrolledwindow", webScrolledWindow);
+				if (webScrolledWindow) {
+					webView = WEBKIT_WEB_VIEW(webkit_web_view_new());
+					g_object_set(webkit_web_view_get_settings(webView), "auto-resize-window", TRUE, NULL);
+					webScrolledWindow->add(*(Glib::wrap(GTK_WIDGET(webView))));
+					
+					webkit_web_view_load_uri(webView, "https://github.com/dreamsxin/Meeting");
+					webScrolledWindow->show_all();
+					
+				}
+				app->run(*mainWindow);
+			}
 		}
 	}
-
-	delete loginDialog;
-	delete mainWindow;
 
 	return 0;
 }
