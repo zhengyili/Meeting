@@ -4,5 +4,5 @@ GtkFrame.default {
 
 GtkTextView.default {
 	border-radius: 10px;
-	background-color: #00CCCC;
+	background-color: @bg_color;
 }
